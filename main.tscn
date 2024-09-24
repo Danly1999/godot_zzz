@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://b06160xbobvee"]
+[gd_scene load_steps=6 format=3 uid="uid://b06160xbobvee"]
 
 [ext_resource type="Texture2D" uid="uid://bd1ejepip7ni5" path="res://icon.svg" id="1_eqfbe"]
 [ext_resource type="Script" path="res://icon.gd" id="2_dfvx2"]
 [ext_resource type="PackedScene" uid="uid://v76ah872kqxc" path="res://box.tscn" id="2_mv8p7"]
 [ext_resource type="Texture2D" uid="uid://ccu1tmqsvs4mo" path="res://4cdbc87ecee1a931b977ad3ef9b2291f_7628619850343228526.png" id="4_xiktr"]
+[ext_resource type="PackedScene" uid="uid://luo5c5oe0ujs" path="res://control.tscn" id="5_iceuc"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(46, 135)
+position = Vector2(577, 324)
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(367, -7)
@@ -16,12 +17,21 @@ texture = ExtResource("1_eqfbe")
 script = ExtResource("2_dfvx2")
 
 [node name="Node2D" parent="." instance=ExtResource("2_mv8p7")]
-position = Vector2(-474, -47)
+position = Vector2(-371, -39)
 
 [node name="4Cdbc87Ecee1a931b977Ad3Ef9b2291f7628619850343228526" type="Sprite2D" parent="."]
-position = Vector2(578, 367)
+position = Vector2(-8, 441)
 texture = ExtResource("4_xiktr")
 
 [node name="4Cdbc87Ecee1a931b977Ad3Ef9b2291f7628619850343228527" type="Sprite2D" parent="."]
 position = Vector2(-297, 444)
 texture = ExtResource("4_xiktr")
+
+[node name="Control" parent="." instance=ExtResource("5_iceuc")]
+custom_minimum_size = Vector2(1024, 512)
+offset_left = 74.0
+offset_top = 77.0
+offset_right = 1098.0
+offset_bottom = 589.0
+size_flags_horizontal = 3
+size_flags_vertical = 3

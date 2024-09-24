@@ -1,0 +1,199 @@
+[gd_scene load_steps=13 format=3 uid="uid://luo5c5oe0ujs"]
+
+[ext_resource type="Script" path="res://button.gd" id="1_1b155"]
+[ext_resource type="Texture2D" uid="uid://ccu1tmqsvs4mo" path="res://4cdbc87ecee1a931b977ad3ef9b2291f_7628619850343228526.png" id="1_j6mow"]
+[ext_resource type="Script" path="res://texture_rect.gd" id="2_2y3q8"]
+[ext_resource type="Shader" path="res://none.gdshader" id="2_dvv01"]
+[ext_resource type="Texture2D" uid="uid://bd1ejepip7ni5" path="res://icon.svg" id="3_cgplv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m2e05"]
+line_spacing = 5.995
+font_size = 36
+
+[sub_resource type="Animation" id="Animation_3hud3"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/TextureRect:material:shader_parameter/a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.98, 0.18]
+}
+
+[sub_resource type="Animation" id="Animation_je02h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/TextureRect:material:shader_parameter/a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.885]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4eiyg"]
+_data = {
+&"new_animation": SubResource("Animation_3hud3"),
+&"RESET": SubResource("Animation_je02h")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbdud"]
+shader = ExtResource("2_dvv01")
+shader_parameter/a = 0.885
+shader_parameter/image = ExtResource("1_j6mow")
+
+[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_52bhb"]
+button_index = 1
+
+[sub_resource type="Shortcut" id="Shortcut_500ei"]
+events = [SubResource("InputEventMouseButton_52bhb")]
+
+[node name="Control" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(1024, 1024)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -188.0
+offset_right = -128.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 43.0
+offset_right = 199.0
+offset_bottom = 103.0
+text = "6666"
+label_settings = SubResource("LabelSettings_m2e05")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -478.0
+offset_top = -290.0
+offset_right = 547.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.0
+offset_top = -320.0
+offset_right = 50.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 65
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 2.74
+texture = ExtResource("3_cgplv")
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("3_cgplv")
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("3_cgplv")
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("3_cgplv")
+
+[node name="TextureRect5" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("3_cgplv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4eiyg")
+}
+autoplay = "new_animation"
+
+[node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
+material = SubResource("ShaderMaterial_tbdud")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.5
+offset_top = -185.0
+offset_right = 143.5
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j6mow")
+script = ExtResource("2_2y3q8")
+
+[node name="Button" type="Button" parent="AnimationPlayer/TextureRect"]
+layout_mode = 1
+offset_right = 45.0
+offset_bottom = 31.0
+shortcut = SubResource("Shortcut_500ei")
+text = "6666"
+script = ExtResource("1_1b155")
+
+[node name="Button2" type="Button" parent="AnimationPlayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -134.0
+offset_right = 66.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("3_cgplv")
+
+[connection signal="pressed" from="AnimationPlayer/TextureRect/Button" to="AnimationPlayer/TextureRect" method="_on_button_pressed"]
+[connection signal="toggled" from="AnimationPlayer/TextureRect/Button" to="AnimationPlayer/TextureRect" method="_on_button_toggled"]
+[connection signal="pressed" from="AnimationPlayer/TextureRect/Button2" to="AnimationPlayer/TextureRect" method="_on_button_2_pressed"]
