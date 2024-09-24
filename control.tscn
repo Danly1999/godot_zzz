@@ -10,42 +10,6 @@
 line_spacing = 5.995
 font_size = 36
 
-[sub_resource type="Animation" id="Animation_3hud3"]
-resource_name = "new_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/TextureRect:material:shader_parameter/a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.98, 0.18]
-}
-
-[sub_resource type="Animation" id="Animation_je02h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/TextureRect:material:shader_parameter/a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.885]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4eiyg"]
-_data = {
-&"RESET": SubResource("Animation_je02h"),
-&"new_animation": SubResource("Animation_3hud3")
-}
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tbdud"]
 shader = ExtResource("2_dvv01")
 shader_parameter/a = 0.885
@@ -56,6 +20,42 @@ button_index = 1
 
 [sub_resource type="Shortcut" id="Shortcut_500ei"]
 events = [SubResource("InputEventMouseButton_52bhb")]
+
+[sub_resource type="Animation" id="Animation_je02h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.885]
+}
+
+[sub_resource type="Animation" id="Animation_3hud3"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.98, 0.18]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4eiyg"]
+_data = {
+"RESET": SubResource("Animation_je02h"),
+"new_animation": SubResource("Animation_3hud3")
+}
 
 [node name="Control" type="Control"]
 clip_contents = true
@@ -149,29 +149,24 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 texture = ExtResource("3_cgplv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_4eiyg")
-}
-autoplay = "new_animation"
-
-[node name="TextureRect" type="TextureRect" parent="AnimationPlayer"]
+[node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_tbdud")
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -143.5
+offset_left = -79.5
 offset_top = -185.0
-offset_right = 143.5
+offset_right = 207.5
 offset_bottom = 185.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_j6mow")
 script = ExtResource("2_2y3q8")
 
-[node name="Button" type="Button" parent="AnimationPlayer/TextureRect"]
+[node name="Button" type="Button" parent="TextureRect"]
 layout_mode = 1
 offset_right = 45.0
 offset_bottom = 31.0
@@ -179,7 +174,7 @@ shortcut = SubResource("Shortcut_500ei")
 text = "6666"
 script = ExtResource("1_1b155")
 
-[node name="Button2" type="Button" parent="AnimationPlayer/TextureRect"]
+[node name="Button2" type="Button" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -194,6 +189,13 @@ grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("3_cgplv")
 
-[connection signal="pressed" from="AnimationPlayer/TextureRect/Button" to="AnimationPlayer/TextureRect" method="_on_button_pressed"]
-[connection signal="toggled" from="AnimationPlayer/TextureRect/Button" to="AnimationPlayer/TextureRect" method="_on_button_toggled"]
-[connection signal="pressed" from="AnimationPlayer/TextureRect/Button2" to="AnimationPlayer/TextureRect" method="_on_button_2_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_4eiyg")
+}
+autoplay = "new_animation"
+
+[connection signal="pressed" from="TextureRect/Button" to="TextureRect" method="_on_button_pressed"]
+[connection signal="toggled" from="TextureRect/Button" to="TextureRect" method="_on_button_toggled"]
+[connection signal="pressed" from="TextureRect/Button2" to="TextureRect" method="_on_button_2_pressed"]
