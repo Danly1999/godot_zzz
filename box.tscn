@@ -1,10 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://v76ah872kqxc"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_6l7yq"]
+[ext_resource type="Texture2D" uid="uid://ccu1tmqsvs4mo" path="res://4cdbc87ecee1a931b977ad3ef9b2291f_7628619850343228526.png" id="1_vwq0e"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(27, 104)
+position = Vector2(76, 116)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(55, 63)
-texture = SubResource("ImageTexture_6l7yq")
+position = Vector2(609, 294)
+scale = Vector2(0.837688, 0.768919)
+texture = ExtResource("1_vwq0e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(294.375, 112.625)
+scale = Vector2(1.12407, 1.00203)
+texture = ExtResource("1_vwq0e")
