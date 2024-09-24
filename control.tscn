@@ -42,8 +42,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4eiyg"]
 _data = {
-&"new_animation": SubResource("Animation_3hud3"),
-&"RESET": SubResource("Animation_je02h")
+&"RESET": SubResource("Animation_je02h"),
+&"new_animation": SubResource("Animation_3hud3")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tbdud"]
