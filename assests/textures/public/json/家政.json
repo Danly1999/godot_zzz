@@ -1,0 +1,1 @@
+{"inkVersion":21,"root":[["^获得收藏:家政! ","#","^other ","/#","#","^可琳.png","/#","\n","ev","str","^已解锁","/str","/ev",{"VAR=":"weapon_state","re":true},"end",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^未解锁","/str",{"VAR=":"weapon_state"},1,{"VAR=":"weapon_camp"},0,{"VAR=":"weapon_id"},true,{"VAR=":"delete"},"/ev","end",null],"#f":1}],"listDefs":{}}

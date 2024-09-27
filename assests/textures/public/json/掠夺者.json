@@ -1,0 +1,1 @@
+{"inkVersion":21,"root":[[{"->":"start"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"start":["^「不论是河流湖泊，还是空洞周边，如果您看到有人随身装备了带电鱼叉，","\n","^请直接向治安局报告！」","\n","^——新艾利都治安局，某辆宣传车循环播放的口号 ","#","^player","/#","\n","end",{"#f":1}],"global decl":["ev",0,{"VAR=":"y_key"},true,{"VAR=":"delete"},"/ev","end",null],"#f":1}],"listDefs":{}}

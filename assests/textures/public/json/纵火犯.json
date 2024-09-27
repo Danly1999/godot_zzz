@@ -1,0 +1,1 @@
+{"inkVersion":21,"root":[[{"->":"start"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"start":["^「要不，我去上前骗他们喝一杯，消耗一下他们的武器储备?」","\n","^——空洞里，被打劫的调查员正在悄悄讨论退敌之策 ","#","^player","/#","\n","end",{"#f":1}],"global decl":["ev",0,{"VAR=":"y_key"},true,{"VAR=":"delete"},"/ev","end",null],"#f":1}],"listDefs":{}}

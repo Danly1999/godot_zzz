@@ -1,0 +1,1 @@
+{"inkVersion":21,"root":[[{"->":"start"},["done",{"#f":2,"#n":"g-0"}],null],"done",{"start":["^加2防御力 ","#","^other ","/#","#","^丽娜.png","/#","\n","ev",{"VAR?":"def"},2,"+",{"VAR=":"def","re":true},"/ev","end",{"#f":1}],"global decl":["ev",0,{"VAR=":"def"},true,{"VAR=":"delete"},"/ev","end",null],"#f":1}],"listDefs":{}}

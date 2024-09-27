@@ -1,0 +1,1 @@
+{"inkVersion":21,"root":[[{"->":"start"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"start":["^「我要是扔个棍子或皮球出去，你说这怪物会去捡嘛？」","\n","^「你可以试试，不过住院的费用我可不报销。」","\n","^——比利与妮可的某次闲聊 ","#","^player","/#","\n","end",{"#f":1}],"global decl":["ev",0,{"VAR=":"y_key"},true,{"VAR=":"delete"},"/ev","end",null],"#f":1}],"listDefs":{}}

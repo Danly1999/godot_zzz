@@ -1,0 +1,1 @@
+{"inkVersion":21,"root":[[{"->":"start"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"start":["^[该空洞内的路径较为复杂，但可以确定的是，当「它」出现在道路尽头时，","\n","^此路即是「死路」]","\n","^——空洞调查协会关于「死路空洞」的第17号调查记录 ","#","^player","/#","\n","end",{"#f":1}],"global decl":["ev",0,{"VAR=":"y_key"},true,{"VAR=":"delete"},"/ev","end",null],"#f":1}],"listDefs":{}}
