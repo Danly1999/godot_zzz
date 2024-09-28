@@ -1,7 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://boqpx1sl7ckid"]
+[gd_scene load_steps=4 format=3 uid="uid://boqpx1sl7ckid"]
 
 [ext_resource type="PackedScene" uid="uid://blitvihnnvual" path="res://prefabs/group.tscn" id="1_brxlc"]
+[ext_resource type="Material" uid="uid://cekt083ymjjj4" path="res://assests/materials/prossing2_mat.tres" id="2_5la2s"]
+[ext_resource type="Material" uid="uid://b2lv71ofb2n2o" path="res://assests/materials/prossing_mat.tres" id="3_xasuy"]
 
 [node name="mian_scene" type="Node"]
 
-[node name="Group" parent="." instance=ExtResource("1_brxlc")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Group2" parent="CanvasLayer" instance=ExtResource("1_brxlc")]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = ExtResource("2_5la2s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Group" parent="CanvasLayer2" instance=ExtResource("1_brxlc")]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+material = ExtResource("3_xasuy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = -10.0
+offset_right = 110.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false

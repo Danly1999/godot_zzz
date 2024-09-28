@@ -20,7 +20,7 @@ offset_right = 330.0
 offset_bottom = 165.0
 grow_vertical = 2
 theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 15
+theme_override_constants/v_separation = 40
 columns = 3
 
 [node name="ButtonTexture" parent="GridContainer" instance=ExtResource("1_o2tjb")]
@@ -43,3 +43,13 @@ layout_mode = 2
 
 [node name="ButtonTexture7" parent="GridContainer" instance=ExtResource("1_o2tjb")]
 layout_mode = 2
+
+[node name="ButtonTexture8" parent="GridContainer" instance=ExtResource("1_o2tjb")]
+layout_mode = 2
+
+[node name="ButtonTexture9" parent="GridContainer" instance=ExtResource("1_o2tjb")]
+layout_mode = 2
+
+[node name="ButtonTexture" parent="." instance=ExtResource("1_o2tjb")]
+visible = false
+layout_mode = 0

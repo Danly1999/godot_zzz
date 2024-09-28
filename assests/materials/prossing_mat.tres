@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b2lv71ofb2n2o"]
+
+[ext_resource type="Shader" path="res://assests/shaders/prossing.gdshader" id="1_22rx4"]
+
+[resource]
+shader = ExtResource("1_22rx4")
+shader_parameter/size = Vector2(10, 2)
