@@ -12,9 +12,22 @@ config_version=5
 
 config/name="新建游戏项目"
 run/main_scene="res://prefabs/group.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.3", "Mobile")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/aspect="expand"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+mouse_pos={
+"type": "vec2",
+"value": Vector2(0, 0)
+}

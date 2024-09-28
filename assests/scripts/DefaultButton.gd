@@ -22,7 +22,7 @@ func _gui_input(event):
 				if tween:
 					tween.kill() # 终止之前的补间动画。
 				tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
-				tween.tween_property(self, "scale", Vector2(1.2, 1.2), 0.2) # 恢复原大小
+				tween.tween_property(self, "scale", Vector2(1, 1), 0.2) # 恢复原大小
 
 func _on_mouse_entered() -> void:
 	if tween:

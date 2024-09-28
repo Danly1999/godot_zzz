@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://boqpx1sl7ckid"]
+[gd_scene load_steps=2 format=3 uid="uid://boqpx1sl7ckid"]
+
+[ext_resource type="PackedScene" uid="uid://blitvihnnvual" path="res://prefabs/group.tscn" id="1_brxlc"]
 
 [node name="mian_scene" type="Node"]
+
+[node name="Group" parent="." instance=ExtResource("1_brxlc")]

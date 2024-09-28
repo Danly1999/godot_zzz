@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi6e7osqk2mha"]
+[gd_scene load_steps=5 format=3 uid="uid://bi6e7osqk2mha"]
 
+[ext_resource type="Shader" path="res://assests/shaders/UITexture.gdshader" id="1_bmgkw"]
 [ext_resource type="Texture2D" uid="uid://c5iu7djw68rs2" path="res://assests/textures/public/bqb/丽娜.png" id="1_oln12"]
 [ext_resource type="Script" path="res://assests/scripts/DefaultButton.gd" id="2_ac5jp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_40lr8"]
+shader = ExtResource("1_bmgkw")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/tex = ExtResource("1_oln12")
 
 [node name="ButtonTexture" type="Control"]
 custom_minimum_size = Vector2(100, 100)
@@ -19,6 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_40lr8")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
