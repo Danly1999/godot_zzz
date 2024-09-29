@@ -11,6 +11,7 @@
 [node name="Group2" parent="CanvasLayer" instance=ExtResource("1_brxlc")]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = ExtResource("2_5la2s")
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,10 +22,12 @@ mouse_filter = 2
 mouse_force_pass_scroll_events = false
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Group" parent="CanvasLayer2" instance=ExtResource("1_brxlc")]
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+visible = false
 material = ExtResource("3_xasuy")
 anchors_preset = 15
 anchor_right = 1.0
