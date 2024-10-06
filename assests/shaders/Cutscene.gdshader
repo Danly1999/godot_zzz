@@ -13,10 +13,11 @@ void fragment() {
 	float iResolution = SCREEN_PIXEL_SIZE.r/SCREEN_PIXEL_SIZE.g;
 	vec2 uv = vec2(UV.x,UV.y*iResolution);
 	
-	vec2 pixel_uv = fract(floor(uv*200.0)/200.0); 
+	vec2 pixel_uv = fract(floor(uv*600.0)/600.0); 
 	float mask = texture(_MaskTex,pixel_uv*0.6+vec2(0,TIME*0.05)).r;
-	float a = step(length(pixel_uv-0.5)*3.0+_Lerp,mask);
-	float b = (step(length(pixel_uv-0.5)*2.8+_Lerp-0.05,mask));
+	float m = 1.0-length(pixel_uv-0.5);
+	float a = step(m*3.0+_Lerp,mask);
+	float b = (step(m*3.0+_Lerp-0.03,mask));
 	vec3 outline = (b-a)*_OutlineColor.rgb;
 
 	COLOR = vec4(vertex_color.rgb+outline,b);

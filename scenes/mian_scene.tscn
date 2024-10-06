@@ -1,108 +1,73 @@
-[gd_scene load_steps=11 format=3 uid="uid://boqpx1sl7ckid"]
+[gd_scene load_steps=10 format=3 uid="uid://boqpx1sl7ckid"]
 
 [ext_resource type="PackedScene" uid="uid://blitvihnnvual" path="res://prefabs/group.tscn" id="1_brxlc"]
-[ext_resource type="Shader" path="res://assests/shaders/Cutscene.gdshader" id="2_edp00"]
+[ext_resource type="Shader" path="res://assests/shaders/Camera.gdshader" id="1_iirk1"]
 [ext_resource type="Texture2D" uid="uid://crtyqqxvfg1su" path="res://assests/textures/mask/void.png" id="3_sb8pv"]
-[ext_resource type="Shader" path="res://scenes/text.gdshader" id="4_2evc2"]
+[ext_resource type="Shader" path="res://assests/shaders/text.gdshader" id="4_2evc2"]
+[ext_resource type="FontFile" uid="uid://2dt4var5142u" path="res://assests/font/猫啃什锦黑.ttf" id="5_it2n1"]
+[ext_resource type="PackedScene" uid="uid://dng1ymplr4qc8" path="res://prefabs/cutscene.tscn" id="6_hwytk"]
 
-[sub_resource type="Animation" id="Animation_twn2i"]
-resource_name = "cutscene"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/_Lerp")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.2, -1.5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_tpdrr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/_Lerp")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfuct"]
-_data = {
-"RESET": SubResource("Animation_tpdrr"),
-"cutscene": SubResource("Animation_twn2i")
-}
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkor6"]
-shader = ExtResource("2_edp00")
-shader_parameter/_Lerp = 0.0
-shader_parameter/_OutlineColor = Color(0.999323, 0.896268, 0.863353, 1)
-shader_parameter/_MaskTex = ExtResource("3_sb8pv")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_axxf2"]
+shader = ExtResource("1_iirk1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gjp6j"]
 shader = ExtResource("4_2evc2")
 shader_parameter/_MaskTex = ExtResource("3_sb8pv")
 
 [sub_resource type="LabelSettings" id="LabelSettings_38wwk"]
-font_size = 196
-outline_size = 25
+font = ExtResource("5_it2n1")
+font_size = 30
+font_color = Color(0.588235, 0.560784, 0.964706, 1)
 outline_color = Color(0, 0, 0, 1)
 
 [node name="mian_scene" type="Node"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_rfuct")
-}
+[node name="Camera2D" type="Camera2D" parent="."]
+material = SubResource("ShaderMaterial_axxf2")
+anchor_mode = 0
 
-[node name="Group2" parent="." instance=ExtResource("1_brxlc")]
+[node name="cutscene" parent="." instance=ExtResource("6_hwytk")]
+visible = false
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_mkor6")
-use_parent_material = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.5
+offset_top = -175.5
+offset_right = 264.5
+offset_bottom = 175.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.229806, 0.158624, 0.0286957, 1)
+size_flags_horizontal = 6
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="."]
+[node name="Group" parent="Control" instance=ExtResource("1_brxlc")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -122.0
+offset_right = 136.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
 material = SubResource("ShaderMaterial_gjp6j")
-offset_right = 455.0
-offset_bottom = 188.0
-text = "666666"
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "单例小哥"
 label_settings = SubResource("LabelSettings_38wwk")

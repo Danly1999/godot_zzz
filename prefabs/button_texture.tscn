@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi6e7osqk2mha"]
+[gd_scene load_steps=10 format=3 uid="uid://bi6e7osqk2mha"]
 
-[ext_resource type="Material" uid="uid://bgt1paf3qv0nk" path="res://assests/materials/shader_material.tres" id="1_oqp76"]
+[ext_resource type="Material" uid="uid://bgt1paf3qv0nk" path="res://assests/materials/ui_card.tres" id="1_oqp76"]
 [ext_resource type="Script" path="res://assests/scripts/DefaultButton.gd" id="2_ac5jp"]
 [ext_resource type="Texture2D" uid="uid://bjijsqm6qg6w0" path="res://assests/textures/cards/BlurMap.jpg" id="2_d022m"]
 [ext_resource type="Texture2D" uid="uid://btveikgi3kya8" path="res://assests/textures/cards/Banana.jpg" id="2_ns3pe"]
 [ext_resource type="Texture2D" uid="uid://d121u56vif68w" path="res://assests/textures/cards/DogHand.jpg" id="4_ms2bs"]
+[ext_resource type="Shader" path="res://assests/shaders/text.gdshader" id="6_oo3qf"]
+[ext_resource type="Texture2D" uid="uid://crtyqqxvfg1su" path="res://assests/textures/mask/void.png" id="7_3qr0e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2bgb1"]
+shader = ExtResource("6_oo3qf")
+shader_parameter/_MaskTex = ExtResource("7_3qr0e")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bc4x6"]
+line_spacing = 0.0
+font_size = 9
+font_color = Color(0.941176, 0.937255, 0.956863, 1)
+shadow_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 
 [node name="ButtonTexture" type="TextureButton"]
 material = ExtResource("1_oqp76")
@@ -27,6 +39,38 @@ texture_hover = ExtResource("4_ms2bs")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("2_ac5jp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -52.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.0470588, 0.184314, 0.254902, 0.588235)
+
+[node name="Label" type="Label" parent="ColorRect"]
+material = SubResource("ShaderMaterial_2bgb1")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "倍率有20%翻倍sdadasd"
+label_settings = SubResource("LabelSettings_bc4x6")
+autowrap_mode = 1
+clip_text = true
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]

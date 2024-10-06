@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bgt1paf3qv0nk"]
+
+[ext_resource type="Shader" path="res://assests/shaders/UITexture.gdshader" id="1_gc26n"]
+[ext_resource type="Texture2D" uid="uid://crtyqqxvfg1su" path="res://assests/textures/mask/void.png" id="2_8jvdl"]
+
+[sub_resource type="GDScript" id="GDScript_acedd"]
+
+[resource]
+shader = ExtResource("1_gc26n")
+shader_parameter/_outline_color = Color(0.308, 0.8514, 0.88, 0.235294)
+shader_parameter/_down_color = Color(0.117647, 0.196078, 0.392157, 0.705882)
+shader_parameter/fov = 5.0
+shader_parameter/_rot_x = 0.0
+shader_parameter/_rot_y = 0.0
+shader_parameter/_MaskTex = ExtResource("2_8jvdl")
+script = SubResource("GDScript_acedd")

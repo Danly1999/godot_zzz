@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://dng1ymplr4qc8"]
+
+[ext_resource type="Shader" path="res://assests/shaders/Cutscene.gdshader" id="1_rfuc0"]
+[ext_resource type="Texture2D" uid="uid://crtyqqxvfg1su" path="res://assests/textures/mask/void.png" id="2_gfmu0"]
+[ext_resource type="AudioStream" uid="uid://btmdcqkkeq27c" path="res://prefabs/Glitch.wav" id="3_q523p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkor6"]
+shader = ExtResource("1_rfuc0")
+shader_parameter/_Lerp = -1.115
+shader_parameter/_OutlineColor = Color(0.160784, 0.0470588, 0.00392157, 1)
+shader_parameter/_MaskTex = ExtResource("2_gfmu0")
+
+[sub_resource type="Animation" id="Animation_tpdrr"]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/_Lerp")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-2.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect/AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.52,
+"stream": ExtResource("3_q523p")
+}],
+"times": PackedFloat32Array(0.02)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_twn2i"]
+resource_name = "cutscene"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/_Lerp")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, -2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfuct"]
+_data = {
+"RESET": SubResource("Animation_tpdrr"),
+"cutscene": SubResource("Animation_twn2i")
+}
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_mkor6")
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0901961, 0.054902, 0.0705882, 1)
+
+[node name="SceneOnStar" type="AnimationPlayer" parent="."]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_rfuct")
+}
+autoplay = "RESET"
+
+[node name="SceneOnEnd" type="AnimationPlayer" parent="."]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_rfuct")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
