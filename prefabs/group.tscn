@@ -1,77 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://blitvihnnvual"]
+[gd_scene load_steps=2 format=3 uid="uid://blitvihnnvual"]
 
 [ext_resource type="PackedScene" uid="uid://bi6e7osqk2mha" path="res://prefabs/button_texture.tscn" id="1_o2tjb"]
-[ext_resource type="Shader" path="res://assests/shaders/UITexture.gdshader" id="2_rd2g4"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7fsy"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fyqm"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cuokt"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jlxa3"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_43v5p"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ijgka"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujvhd"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xqdxs"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u3fan"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1au3y"]
-resource_local_to_scene = true
-shader = ExtResource("2_rd2g4")
-shader_parameter/fov = 20.0
-shader_parameter/_rot_x = 1.71e-05
-shader_parameter/_rot_y = 1.71e-05
 
 [node name="Group" type="Control"]
 layout_mode = 3
@@ -95,53 +24,16 @@ theme_override_constants/v_separation = 40
 columns = 3
 
 [node name="ButtonTexture" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_a7fsy")
 layout_mode = 2
 
 [node name="ButtonTexture2" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_1fyqm")
 layout_mode = 2
 
 [node name="ButtonTexture3" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_cuokt")
 layout_mode = 2
 
 [node name="ButtonTexture4" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_jlxa3")
 layout_mode = 2
 
 [node name="ButtonTexture5" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_43v5p")
 layout_mode = 2
-
-[node name="ButtonTexture6" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_ijgka")
-layout_mode = 2
-
-[node name="ButtonTexture7" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_ujvhd")
-layout_mode = 2
-
-[node name="ButtonTexture8" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_xqdxs")
-layout_mode = 2
-
-[node name="ButtonTexture9" parent="GridContainer" instance=ExtResource("1_o2tjb")]
-material = SubResource("ShaderMaterial_u3fan")
-layout_mode = 2
-
-[node name="ButtonTexture" parent="." instance=ExtResource("1_o2tjb")]
-visible = false
-material = SubResource("ShaderMaterial_1au3y")
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 88.0
-offset_bottom = 120.0
-grow_horizontal = 1
-grow_vertical = 1

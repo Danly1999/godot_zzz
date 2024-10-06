@@ -1,7 +1,10 @@
 shader_type canvas_item;
+#include "res://assests/shaders/Functions.gdshaderinc"
+uniform vec4 _outline_color : source_color = vec4(1,1,1,1);
 uniform float fov : hint_range(0.0, 179.0) = 90;
 uniform float _rot_x : hint_range(-360.0, 360.0) = 0.0;
 uniform float _rot_y : hint_range(-360.0, 360.0) = 0.0;
+uniform sampler2D _MaskTex : repeat_enable;
 varying vec4 vertex_color;  
 varying vec3 camera_pos;  
 varying vec2 offset;  
@@ -24,15 +27,17 @@ void vertex() {
 	offset = v * inv_rot_mat[2].xy;
 	
 }
-
 void fragment() {
 
 	vec2 uv = (camera_pos.xy / camera_pos.z).xy-offset;
-	
 	vec4 col = texture(TEXTURE,uv+0.5);
-	col.rgb += clamp(fwidth(col.a)*sin(uv.y*15.0+TIME*5.0)*10.0,0,1);
+	float mask = texture(_MaskTex,UV*vec2(1,(TEXTURE_PIXEL_SIZE.r/TEXTURE_PIXEL_SIZE.g))*0.5+vec2(0,TIME*0.1)).r;
+	float mask_outlight = texture(_MaskTex,uv+0.5).g*0.3;
+	float sphere_mask = smoothstep(mask+0.1,mask,max((1.0-length(UV-0.5))*1.6,pow(1.0-UV.y,0.4)*1.5));
+	col.rgb = lerp_vec3(col.rgb,_outline_color.rgb,sphere_mask*_outline_color.a)+mask_outlight;
 	col.a = step(max(abs(uv.x),abs(uv.y)),0.5);
-	COLOR = col*vertex_color;
+	COLOR = col;
+	//COLOR = col*vertex_color;
 }
 
 //void light() {
