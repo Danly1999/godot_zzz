@@ -14,24 +14,15 @@ shader_parameter/_MaskTex = ExtResource("7_3qr0e")
 
 [sub_resource type="LabelSettings" id="LabelSettings_bc4x6"]
 line_spacing = 0.0
-font_size = 9
+font_size = 15
 font_color = Color(0.941176, 0.937255, 0.956863, 1)
 shadow_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 
 [node name="ButtonTexture" type="TextureButton"]
 material = ExtResource("1_oqp76")
-custom_minimum_size = Vector2(88, 120)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = -60.0
-offset_right = 44.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(170, 232)
+offset_right = 170.0
+offset_bottom = 232.0
 pivot_offset = Vector2(44, 60)
 texture_normal = ExtResource("2_ns3pe")
 texture_pressed = ExtResource("2_d022m")
@@ -42,16 +33,15 @@ script = ExtResource("2_ac5jp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -52.0
-offset_bottom = -7.0
-grow_horizontal = 0
-grow_vertical = 0
+offset_left = 26.0
+offset_top = 124.0
+offset_right = 1.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 color = Color(0.0470588, 0.184314, 0.254902, 0.588235)
 

@@ -7,7 +7,7 @@
 
 [resource]
 shader = ExtResource("1_gc26n")
-shader_parameter/_outline_color = Color(0.308, 0.8514, 0.88, 0.235294)
+shader_parameter/_outline_color = Color(0.208, 0.536, 0.812, 0.5)
 shader_parameter/_down_color = Color(0.117647, 0.196078, 0.392157, 0.705882)
 shader_parameter/fov = 5.0
 shader_parameter/_rot_x = 0.0

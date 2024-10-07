@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="新建游戏项目"
+config/name="FunctionCard"
 run/main_scene="res://scenes/mian_scene.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 

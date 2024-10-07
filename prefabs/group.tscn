@@ -3,10 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bi6e7osqk2mha" path="res://prefabs/button_texture.tscn" id="1_o2tjb"]
 
 [node name="GridContainer" type="GridContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 283.315
+offset_bottom = 263.76
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
 columns = 3
 
 [node name="ButtonTexture" parent="." instance=ExtResource("1_o2tjb")]
@@ -19,10 +21,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ButtonTexture4" parent="." instance=ExtResource("1_o2tjb")]
-layout_mode = 2
-
-[node name="ButtonTexture5" parent="." instance=ExtResource("1_o2tjb")]
-layout_mode = 2
-
-[node name="ButtonTexture6" parent="." instance=ExtResource("1_o2tjb")]
 layout_mode = 2
